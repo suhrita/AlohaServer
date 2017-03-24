@@ -1,0 +1,97 @@
+<script type="text/javascript">
+
+// function validate username
+function validateUsername()
+{
+
+// get username
+	var user_name = document.form.name.value;
+	var invalidchar = /\W/.test(user_name); //can contain alphanumeric characters
+
+if(user_name.length<4 || invalidchar)  // if username is less than 4 characters and has invalid characters throw an error 
+	{
+	alert("invalid username");
+	return false;
+	};
+}
+
+//validate name, lastname 
+function validateName()
+{
+
+// get first name
+	var name = document.form.name.value;
+//check if input contains only strings
+	var notnumber = !/^[A-Za-z]+$/.test(name);
+
+	if(notnumber)  // if name feild contains invalid characters throw an error 
+	
+		{
+		alert("Please Enter Correct Details Containing no numbers");
+			return false;
+		};
+}
+
+//validate email 
+function validateEmail()
+{
+
+// get email
+	var email = document.getElementById('email').value;
+	var emailregexpress = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+
+	if(!emailregexpress )  // if email feild contains invalid characters throw an error 
+		{
+		alert("Invalid Email");
+		return false;
+		}; 
+}
+
+// validate password
+function validatePassword()
+{
+
+// get password
+	var password = document.getElementById('password').value;
+
+//confirm password
+	var repassword = document.getElementById('repassword').value;
+
+// password should contain at least one uppercase one lower case one digit and one special character and length >5
+	var passwordregexpress= /^(?=.*\d)(?=.*[!@#$%^&*.()])(?=.*[a-z])(?=.*[A-Z]).{5,}$/.test(password);
+
+
+	if (!passwordregexpress) 
+		{
+		alert ("invalid password");
+		//return false;
+		}
+
+// two password match
+	else 
+		if (password != repassword) 
+		{
+		alert ("passwords don't match");
+		return false;
+		};
+}
+
+function validatePhone()
+{
+
+// get phone
+	var phone = document.getElementById('phone').value;
+//PhoneNo format: xxxx-xxx-xxxx
+	var phoneregexpress = /^\d{4}-\d{3}-\d{4}/.test(phone); 
+
+
+	if(phone= ""|| !phoneregexpress)  // if email feild is empty and contains invalid characters throw an error 
+		{
+	alert("Invalid phone");
+	return false;
+		}; 
+
+}
+
+
+</script>

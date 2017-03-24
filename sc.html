@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+	
+      <script type="text/javascript">
+         /*jslint node: true */
+         'use strict';
+         function WebSocketTest()
+         {
+            if ("WebSocket" in window)
+            {
+               // var tls = require('tls');
+var fs = require('fs');
+var tlsOptions = {
+  host: 'ec2-52-40-170-181.us-west-2.compute.amazonaws.com',
+  port: 4441,
+  cert: fs.readFileSync('mycert.pem'),
+  key: fs.readFileSync('mycert.pem'),
+  ca:fs.readFileSync('mycert.pem')
+};
+               alert("WebSocket is supported by your Browser!");
+               
+               // Let us open a web socket
+               debugger;
+               var ws = new WebSocket("ws://ec2-52-40-170-181.us-west-2.compute.amazonaws.com:4441", tlsOptions);
+                
+                ws.send("Suh")
+				
+               ws.onopen = function()
+               {
+                  // Web Socket is connected, send data using send()
+                  ws.send("Message to send");
+                  alert("Message is sent...");
+               };
+				
+               ws.onmessage = function (evt) 
+               { 
+                  var received_msg = evt.data;
+                  alert("Message is received...");
+               };
+				
+               ws.onclose = function()
+               { 
+                  // websocket is closed.
+                  alert("Connection is closed..."); 
+               };
+            }
+            
+            else
+            {
+               // The browser doesn't support WebSocket
+               alert("WebSocket NOT supported by your Browser!");
+            }
+         }
+      </script>
+		
+   </head>
+   <body>
+   
+      <div id="sse">
+         <a href="javascript:WebSocketTest()">Run WebSocket</a>
+      </div>
+      
+   </body>
+</html>

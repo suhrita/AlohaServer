@@ -1,0 +1,80 @@
+body{
+    background:linear-gradient(to bottom right, white, #bcbdc4);
+    height: 400px;
+}
+.headerx{
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    top: 0;
+    left: 0;
+    color: darkgoldenrod;
+        background: #142170;
+
+    z-index: 7;
+    font-family: verdana;
+    
+}
+#pic
+{
+    position: fixed;
+    top: 10;
+    left: 50;
+}
+.centerpic
+{
+    position: fixed;
+         top: 150;
+  left: 450;
+    background: linear-gradient(to bottom left, green,#bcbdc4)
+    
+}
+
+.centerpic1
+{
+    position: fixed;
+         top: 300;
+  left: 550;
+    
+}
+.submit1
+{
+    top: 400;
+    left: 600;
+    background: red;
+    position: fixed;
+    height: 22px;
+    width: 50px;
+    cursor: pointer;
+}
+.bodyyx
+{
+    top:400;
+    left: 550;
+    background: pink;
+    width: 100%;
+    height: 600px
+}
+.header{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    left: 0;
+    color: darkgoldenrod;
+    z-index: 7;
+    font-family: verdana;
+    
+}
+
+.headery{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top:20;
+    left: 1000;
+    color: darkgoldenrod;
+    z-index: 7;
+    font-family: verdana;
+    
+}
